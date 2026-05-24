@@ -4,6 +4,10 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: Arial, Helvetica, sans-serif;
   line-height: 1.5;
@@ -257,6 +261,96 @@ body {
   margin-bottom: 20px;
 }
 
+
+div[style*="border: 1px dashed #ff9a00"] {
+  border: 1px solid rgba(255, 154, 0, 0.3) !important;
+  box-shadow: 0 4px 20px rgba(255, 154, 0, 0.04); 
+  transition: box-shadow 0.3s ease;
+}
+
+div[style*="border: 1px dashed #ff9a00"]:hover {
+  box-shadow: 0 4px 24px rgba(255, 154, 0, 0.09);
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #e2e4e7;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-decoration-color);
+}
+
 .additional-info__languages-item {
   color: var(--secondary-text-color);
+}
+
+#contact,
+#about,
+#experience,
+#terminal {
+  scroll-margin-top: 30px;
+}
+
+@media screen and (max-width: 768px) {
+  .nav-sidebar {
+    display: none !important;
+  }
+}
+
+.nav-sidebar ul li a {
+  transition: all 0.25s ease-in-out;
+  padding: 4px 8px;
+  border-radius: 4px;
+  display: inline-block;
+  width: 100%;
+}
+
+.nav-sidebar ul li a:hover {
+  color: var(--text-decoration-color) !important;
+  background-color: rgba(255, 154, 0, 0.08);
+  padding-left: 12px;
+}
+
+.experiences__company {
+  transition: transform 0.2s ease, border-color 0.2s ease;
+  border-left: 2px solid transparent;
+  padding-left: 10px;
+}
+
+.experiences__company:hover {
+  border-left-color: var(--text-decoration-color);
+  transform: translateX(4px); 
+}
+
+.terminal-window {
+  position: relative;
+  padding-top: 40px !important; 
+  overflow: hidden;
+}
+
+.terminal-window::before {
+  content: "● ● ●  system-core // security-audit";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 32px;
+  background-color: #121217; 
+  color: #5c5c62;
+  font-family: 'Courier New', monospace;
+  font-size: 11px;
+  line-height: 32px;
+  padding-left: 15px;
+  letter-spacing: 1px;
+  border-bottom: 1px solid #ff9a0015;
 }
